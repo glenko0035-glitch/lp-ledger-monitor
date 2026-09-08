@@ -1,3 +1,4 @@
+import {updateBreakdown} from './breakdown.mjs';
 import fs from 'node:fs';
 import {rpc,state,words,hex,WALLET,MANAGER,POOL,PONS,USDG,amounts} from './chain.mjs';
 const read=f=>JSON.parse(fs.readFileSync(f)),write=(f,x)=>{fs.writeFileSync(f+'.tmp',JSON.stringify(x,null,2));fs.renameSync(f+'.tmp',f)};
@@ -32,7 +33,7 @@ const expectedLiquidity=17861942714573618n+[...new Set([...two,...found])].reduc
 const collected=rows.filter(r=>r.pool===3&&['提取手續費','收取費用'].includes(r.action)).reduce((a,r)=>({pons:a.pons+r.token,usdg:a.usdg+r.usd}),{pons:0,usdg:0});
 let reconciled=missing===0&&pending.length===0&&expectedLiquidity.toString()===s.liquidity&&walletP>=-1e-6&&walletU>=-1e-6;
 let apr={value:null,volume24h:null,tvl:null,status:'資料暫缺',lpFee:0.003,source:'https://interface.gateway.uniswap.org/v1/graphql',sampledAt:asOf};
-try{const query='query($chain:Chain!,$poolId:String!){v4Pool(chain:$chain,poolId:$poolId){isDynamicFee volume24h:cumulativeVolume(duration:DAY){value} totalLiquidity{value}}}';const j=await(await fetch(apr.source,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({query,variables:{chain:'ROBINHOOD',poolId:POOL}}),signal:AbortSignal.timeout(15000)})).json();const p=j.data?.v4Pool;apr.volume24h=p?.volume24h?.value??null;apr.tvl=p?.totalLiquidity?.value??null;if(!p?.isDynamicFee&&apr.volume24h!==null&&apr.tvl>0){apr.value=Math.round(apr.volume24h*.003*365)/Math.round(apr.tvl)*100;apr.status='已更新'}else apr.status='24小時成交量暫缺';}catch(e){apr.status='APR來源暫時無法連線'}
+try{const query='query($chain:Chain!,$poolId:String!){v4Pool(chain:$chain,poolId:$poolId){isDynamicFee volume24h:cumulativeVolume(duration:DAY){value} totalLiquidity{value}}}';const j=await(await fetch(apr.source,{method:'POST',headers:{'Content-Type':'application/json','Origin':'https://app.uniswap.org'},body:JSON.stringify({query,variables:{chain:'ROBINHOOD',poolId:POOL}}),signal:AbortSignal.timeout(15000)})).json();const p=j.data?.v4Pool;apr.volume24h=p?.volume24h?.value??null;apr.tvl=p?.totalLiquidity?.value??null;if(!p?.isDynamicFee&&apr.volume24h!==null&&apr.tvl>0){apr.value=Math.round(apr.volume24h*.003*365)/Math.round(apr.tvl)*100;apr.status='已更新'}else apr.status='24小時成交量暫缺';}catch(e){apr.status='APR來源暫時無法連線'}
 const samples=fs.existsSync('data/apr-samples.json')?read('data/apr-samples.json'):[];if(apr.value!==null&&!samples.some(x=>x.sampledAt.slice(0,13)===asOf.slice(0,13)))samples.push(apr);write('data/apr-samples.json',samples);
 const balance=Number(BigInt(await rpc('eth_getBalance',[WALLET,hex(head)])))/1e18;
 const newGas=[...found].filter(h=>!monitor.discovered.includes(h)&&receipts[h]?.from===WALLET).reduce((a,h)=>a+Number(BigInt(receipts[h].gasUsed)*BigInt(receipts[h].effectiveGasPrice))/1e18,0);
@@ -41,6 +42,7 @@ if(Math.abs(nativeResidual)>1e-10)reconciled=false;
 monitor={...monitor,nativeResidual,lastBlock:head,blockHash:block.hash,discovered:[...found],nonce,lastChecked:asOf,missingOutgoing:missing,pending,nativeBalance:balance,coverage:'ERC20/NFT事件與發出交易nonce核對；無日誌操作或原生ETH轉入需另核驗'};
 write('data/receipts.json',receipts);write('data/monitor-state.json',monitor);write('app/ledger.json',rows);
 const snapshot={asOf,block:head,reconciled,monitor,apr,aprSamples:samples.slice(-720),pool3:{...s,collected,strategyTransfer,walletPons:walletP,walletUsdg:walletU,capital,value,gas:gas3,pnl:value-capital-gas3,roi:(value-capital-gas3)/(capital+gas3)*100},totals:{gas:gasAll,frontCost:9.367608,external:11334.61,value:11925.7305870468-9129.70486823247-strategyTransfer+value,pnl:2606.6796077-1346.627199+(value-capital-gas3)},newOperations:two.map(h=>rows.find(r=>r.hash===h))};
+const latestAddRow=rows.filter(r=>r.pool===3&&r.action==='加倉 / 費用抵扣').at(-1);if(latestAddRow){try{await updateBreakdown(latestAddRow,receipts[latestAddRow.hash])}catch{ /* Keep verified net cashflows when historical valuation is unavailable. */ }}
 write('app/snapshot.json',snapshot);console.log(JSON.stringify(snapshot,null,2));
 
 }
