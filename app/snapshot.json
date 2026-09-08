@@ -1,16 +1,23 @@
 {
-  "asOf": "2026-09-08T09:31:16.000Z",
-  "block": 57585034,
+  "asOf": "2026-09-08T14:23:35.000Z",
+  "block": 57758861,
   "reconciled": true,
   "monitor": {
     "cutoff": 1788853787,
-    "nonce": 45,
-    "lastBlock": 57585034,
-    "discovered": [],
-    "nativeBalance": 0.001646016722279767,
+    "nonce": 51,
+    "lastBlock": 57758861,
+    "discovered": [
+      "0x0624445b49f6fd9b27dc206ce0886de1d72542e0f7f113f77d02265b8ceccab0",
+      "0x078ae0e388c756a9e8085f7f76887e0a9b4c96e8376c9838f111dbf5c1d281cb",
+      "0x3038d0652f05662f54cf519ece41941c87dda7b19783b0e79f2bb38f450a25ac",
+      "0xa5cfcd65056aef769d8b1034d786035c589b4d27119a3df9c23a2010243c33fc",
+      "0xa74bc8ddfa10f2ebfd9c0546fc1579806be57e54e911f62656658eabbdd59a36",
+      "0xabac6428c0533f54f438a360f98c79033108254bd2231191a2519ad4cabb20bc"
+    ],
+    "nativeBalance": 0.001503913135743767,
     "startBlock": 57524674,
-    "blockHash": "0x5d819710c190d35ef7614016cacba9d6ac92103213f1b7a36263d9ccc190687e",
-    "lastChecked": "2026-09-08T09:31:16.000Z",
+    "blockHash": "0x56e0a284569ed0e21c6bac921fc2028197e1521bc82841933709c11b9066ef0b",
+    "lastChecked": "2026-09-08T14:23:35.000Z",
     "missingOutgoing": 0,
     "pending": [],
     "coverage": "ERC20/NFT事件與發出交易nonce核對；無日誌操作或原生ETH轉入需另核驗",
@@ -23,38 +30,39 @@
     "status": "24小時成交量暫缺",
     "lpFee": 0.003,
     "source": "https://interface.gateway.uniswap.org/v1/graphql",
-    "sampledAt": "2026-09-08T09:31:16.000Z"
+    "sampledAt": "2026-09-08T14:23:35.000Z"
   },
   "aprSamples": [],
   "pool3": {
-    "pons": 8060.171208559121,
-    "usdg": 3035.1708854674584,
-    "price": 0.7022495402479857,
-    "liquidity": "18044475447587141",
-    "sqrt": "66393462086000077985326",
-    "tick": -279859,
+    "pons": 8494.180411887752,
+    "usdg": 4343.039573932136,
+    "price": 0.7628887801989432,
+    "liquidity": "21327387607992850",
+    "sqrt": "69200653798167356593484",
+    "tick": -279031,
     "protocolFee": 2048500,
     "lpFee": 3000,
-    "unclaimedPons": 11.967742046825402,
-    "unclaimedUsdg": 9.203591,
+    "unclaimedPons": 6.691348375277215,
+    "unclaimedUsdg": 6.028825,
     "collected": {
-      "pons": 135.03903995161124,
-      "usdg": 100.20187999999999
+      "pons": 150.79931029187543,
+      "usdg": 113.20612699999998
     },
-    "walletPons": 5.169227101255828,
-    "walletUsdg": 40.90236999999999,
-    "capital": 9801.946811812868,
-    "value": 8757.562800703636,
-    "gas": 1.5746733621524203,
-    "pnl": -1045.9586844713847,
-    "roi": -10.669213976356287
+    "strategyTransfer": 1562.938729,
+    "walletPons": 0.26542248739065144,
+    "walletUsdg": 0,
+    "capital": 11364.885540812867,
+    "value": 10834.490574584484,
+    "gas": 1.9248146732843396,
+    "pnl": -532.3197809016674,
+    "roi": -4.683106027582708
   },
   "totals": {
-    "gas": 4.884796873300833,
+    "gas": 5.2349381844327505,
     "frontCost": 9.367608,
     "external": 11334.61,
-    "value": 11553.588519517967,
-    "pnl": 214.0937242286152
+    "value": 12067.577564398816,
+    "pnl": 727.7326277983325
   },
   "newOperations": [
     {
@@ -69,9 +77,9 @@
       "timestamp": 1788839475,
       "gasEth": 0.000038484113484,
       "gasPaidByWallet": true,
-      "gasPriceUsd": 2480.842580523579,
-      "gasUsd": 0.09547302740480881,
-      "gasValuation": "2026-09-08T09:31:16.000Z",
+      "gasPriceUsd": 2477.7591568632556,
+      "gasUsd": 0.09535436457874569,
+      "gasValuation": "2026-09-08T14:23:35.000Z",
       "gasPayer": "0x0df5590d07c493ecf14473979bf3d353cb2211ec",
       "cexCost": 0,
       "originalUsdt": 0
@@ -88,9 +96,9 @@
       "timestamp": 1788845839,
       "gasEth": 0.000052100435512,
       "gasPaidByWallet": true,
-      "gasPriceUsd": 2480.842580523579,
-      "gasUsd": 0.1292529788819924,
-      "gasValuation": "2026-09-08T09:31:16.000Z",
+      "gasPriceUsd": 2477.7591568632556,
+      "gasUsd": 0.12909233116642155,
+      "gasValuation": "2026-09-08T14:23:35.000Z",
       "gasPayer": "0x0df5590d07c493ecf14473979bf3d353cb2211ec",
       "cexCost": 0,
       "originalUsdt": 0
