@@ -1,0 +1,7 @@
+'use client';
+export default function AprCandles({samples}:{samples:{value:number|null;sampledAt:string}[]}){
+ const groups=new Map<string,number[]>();for(const s of samples){if(s.value===null||!Number.isFinite(s.value))continue;const day=new Date(new Date(s.sampledAt).getTime()+28800000).toISOString().slice(0,10);groups.set(day,[...(groups.get(day)||[]),s.value]);}
+ const days=[...groups].slice(-14).map(([day,a])=>({day,o:a[0],h:Math.max(...a),l:Math.min(...a),c:a.at(-1)!,n:a.length}));if(!days.length)return null;
+ const low=Math.min(...days.map(d=>d.l)),high=Math.max(...days.map(d=>d.h)),span=Math.max(high-low,1),y=(v:number)=>135-(v-low)/span*110;
+ return <div><svg role="img" aria-label="池子APR日K線，按北京日期彙總每小時有效樣本" viewBox="0 0 400 175" style={{width:'100%',height:175}}>{[0,1,2].map(i=><g key={i}><line x1="42" y1={25+i*55} x2="390" y2={25+i*55} stroke="#e5ece8"/><text x="0" y={29+i*55} fontSize="11" fill="#738579">{(low+span*(1-i/2)).toFixed(1)}%</text></g>)}{days.map((d,i)=>{const x=55+i*325/Math.max(days.length,1),color=d.c>=d.o?'#2a8963':'#c66964';return <g key={d.day}><title>{d.day} 開{d.o.toFixed(2)}% 高{d.h.toFixed(2)}% 低{d.l.toFixed(2)}% 收{d.c.toFixed(2)}% · {d.n}個樣本</title><line x1={x} x2={x} y1={y(d.h)} y2={y(d.l)} stroke={color}/><rect x={x-5} y={Math.min(y(d.o),y(d.c))} width="10" height={Math.max(2,Math.abs(y(d.o)-y(d.c)))} fill={color}/><text x={x} y="160" textAnchor="middle" fontSize="10" fill="#738579">{d.day.slice(5)}</text></g>})}</svg><p style={{fontSize:12}}>日 K 線：有效小時樣本的開、高、低、收；缺失時段不補值，當日尚未收盤。</p></div>
+}

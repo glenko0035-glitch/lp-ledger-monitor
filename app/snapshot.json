@@ -1,0 +1,99 @@
+{
+  "asOf": "2026-09-08T09:31:16.000Z",
+  "block": 57585034,
+  "reconciled": true,
+  "monitor": {
+    "cutoff": 1788853787,
+    "nonce": 45,
+    "lastBlock": 57585034,
+    "discovered": [],
+    "nativeBalance": 0.001646016722279767,
+    "startBlock": 57524674,
+    "blockHash": "0x5d819710c190d35ef7614016cacba9d6ac92103213f1b7a36263d9ccc190687e",
+    "lastChecked": "2026-09-08T09:31:16.000Z",
+    "missingOutgoing": 0,
+    "pending": [],
+    "coverage": "ERC20/NFT事件與發出交易nonce核對；無日誌操作或原生ETH轉入需另核驗",
+    "nativeResidual": 0
+  },
+  "apr": {
+    "value": null,
+    "volume24h": null,
+    "tvl": null,
+    "status": "24小時成交量暫缺",
+    "lpFee": 0.003,
+    "source": "https://interface.gateway.uniswap.org/v1/graphql",
+    "sampledAt": "2026-09-08T09:31:16.000Z"
+  },
+  "aprSamples": [],
+  "pool3": {
+    "pons": 8060.171208559121,
+    "usdg": 3035.1708854674584,
+    "price": 0.7022495402479857,
+    "liquidity": "18044475447587141",
+    "sqrt": "66393462086000077985326",
+    "tick": -279859,
+    "protocolFee": 2048500,
+    "lpFee": 3000,
+    "unclaimedPons": 11.967742046825402,
+    "unclaimedUsdg": 9.203591,
+    "collected": {
+      "pons": 135.03903995161124,
+      "usdg": 100.20187999999999
+    },
+    "walletPons": 5.169227101255828,
+    "walletUsdg": 40.90236999999999,
+    "capital": 9801.946811812868,
+    "value": 8757.562800703636,
+    "gas": 1.5746733621524203,
+    "pnl": -1045.9586844713847,
+    "roi": -10.669213976356287
+  },
+  "totals": {
+    "gas": 4.884796873300833,
+    "frontCost": 9.367608,
+    "external": 11334.61,
+    "value": 11553.588519517967,
+    "pnl": 214.0937242286152
+  },
+  "newOperations": [
+    {
+      "pool": 3,
+      "hash": "0xe01794acc47d16588aaa1b9b291f55e0dc74990a00ef63dc0cd2bd32e5dd1be0",
+      "time": "09-08 11:51",
+      "action": "收取費用",
+      "usd": 46.532619,
+      "token": 65.80859514007929,
+      "symbol": "PONS",
+      "recognized": true,
+      "timestamp": 1788839475,
+      "gasEth": 0.000038484113484,
+      "gasPaidByWallet": true,
+      "gasPriceUsd": 2480.842580523579,
+      "gasUsd": 0.09547302740480881,
+      "gasValuation": "2026-09-08T09:31:16.000Z",
+      "gasPayer": "0x0df5590d07c493ecf14473979bf3d353cb2211ec",
+      "cexCost": 0,
+      "originalUsdt": 0
+    },
+    {
+      "pool": 3,
+      "hash": "0xf3cfa2d431effd1cbda2fa84f92e54df08cc15a1517f3838b196eed8a17c39ac",
+      "time": "09-08 13:37",
+      "action": "加倉 / 費用抵扣",
+      "usd": -25.52145,
+      "token": -79.74365073448517,
+      "symbol": "PONS",
+      "recognized": true,
+      "timestamp": 1788845839,
+      "gasEth": 0.000052100435512,
+      "gasPaidByWallet": true,
+      "gasPriceUsd": 2480.842580523579,
+      "gasUsd": 0.1292529788819924,
+      "gasValuation": "2026-09-08T09:31:16.000Z",
+      "gasPayer": "0x0df5590d07c493ecf14473979bf3d353cb2211ec",
+      "cexCost": 0,
+      "originalUsdt": 0
+    }
+  ]
+}

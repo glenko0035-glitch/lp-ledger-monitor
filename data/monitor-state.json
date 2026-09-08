@@ -1,0 +1,14 @@
+{
+  "cutoff": 1788853787,
+  "nonce": 45,
+  "lastBlock": 57585034,
+  "discovered": [],
+  "nativeBalance": 0.001646016722279767,
+  "startBlock": 57524674,
+  "blockHash": "0x5d819710c190d35ef7614016cacba9d6ac92103213f1b7a36263d9ccc190687e",
+  "lastChecked": "2026-09-08T09:31:16.000Z",
+  "missingOutgoing": 0,
+  "pending": [],
+  "coverage": "ERC20/NFT事件與發出交易nonce核對；無日誌操作或原生ETH轉入需另核驗",
+  "nativeResidual": 0
+}
