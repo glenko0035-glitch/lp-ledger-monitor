@@ -18,3 +18,5 @@
 - Six additional transactions at 19:55–19:56 were verified: three ERC20 approvals, one USDG1000→PONS1355.804413 swap, collect, increase liquidity. Approved swap hash is explicitly classified in refresh. Strategy-to-pool3 allocation draws only the USDG shortfall after known flows from the original strategy cash reserve. This affects pool3 capital/ROI but not portfolio external capital or total P&L; remaining pool3 USDG attributable balance is floored to zero by that transfer. Show this accounting policy. Native balance residual is cumulative until explicitly reconciled.
 
 - Schedule changed by user: Beijing00:00,08:00,16:00. Latest batch UI derives from receipt timestamps, not hardcoded history. Reinvestment has claimed-only and collect-plus-add modes; cost uses latest matching operations.
+
+APR requirement: only directly verified Uniswap displayed APR; do not calculate from volume/TVL. Until a direct source is available, show unavailable. Reinvestment evaluation includes unclaimed fees and collect + add gas together.

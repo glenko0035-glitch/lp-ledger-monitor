@@ -27,9 +27,8 @@
     "value": null,
     "volume24h": null,
     "tvl": null,
-    "status": "24小時成交量暫缺",
-    "lpFee": 0.003,
-    "source": "https://interface.gateway.uniswap.org/v1/graphql",
+    "status": "官方APR待接入",
+    "source": "https://developers.uniswap.org/docs/api-reference/pool_info",
     "sampledAt": "2026-09-08T14:43:17.000Z"
   },
   "aprSamples": [],
