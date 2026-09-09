@@ -10,8 +10,10 @@ const receipts=read('data/receipts.json'),base=read('data/base-ledger.json'),hea
 let monitor=fs.existsSync('data/monitor-state.json')?read('data/monitor-state.json'):{cutoff,nonce:45,lastBlock:0,discovered:[],nativeBalance:null};
 if(!monitor.lastBlock){let lo=Number(BigInt(receipts['0xf3cfa2d431effd1cbda2fa84f92e54df08cc15a1517f3838b196eed8a17c39ac'].blockNumber)),hi=head;while(lo<hi){let mid=Math.floor((lo+hi)/2),b=await rpc('eth_getBlockByNumber',[hex(mid),false]);if(Number(BigInt(b.timestamp))<cutoff)lo=mid+1;else hi=mid}monitor.startBlock=lo;monitor.lastBlock=lo-1;}
 async function logs(from,to,topics){if(from>to)return[];try{return await rpc('eth_getLogs',[{fromBlock:hex(from),toBlock:hex(to),topics}])}catch(e){if(/429|timeout|fetch failed|503/i.test(String(e))||to-from<30)throw e;let m=Math.floor((from+to)/2);return [...await logs(from,m,topics),...await logs(m+1,to,topics)]}}
-if(monitor.blockHash){const checkpoint=await rpc('eth_getBlockByNumber',[hex(monitor.lastBlock),false]);if(checkpoint.hash!==monitor.blockHash)throw Error('監控游標區塊雜湊改變，需處理鏈重組後重試');}
-const found=new Set(monitor.discovered);for(const topics of [[null,topic],[null,null,topic]]){for(let from=monitor.lastBlock+1;from<=head;from+=10000){for(const l of await logs(from,Math.min(head,from+9999),topics))found.add(l.transactionHash)}}
+const checkpointBlock=monitor.checkpointBlock??monitor.lastBlock;
+if(monitor.blockHash){const checkpoint=await rpc('eth_getBlockByNumber',[hex(checkpointBlock),false]);if(checkpoint.hash!==monitor.blockHash)throw Error('監控游標區塊雜湊改變，需處理鏈重組後重試');}
+const found=new Set(monitor.discovered);let savedCheckpoint=checkpointBlock;
+for(let from=monitor.lastBlock+1;from<=head;from+=10000){const to=Math.min(head,from+9999);for(const topics of [[null,topic],[null,null,topic]]){for(const l of await logs(from,to,topics))found.add(l.transactionHash)}monitor.lastBlock=to;monitor.discovered=[...found];if(to-savedCheckpoint>=100000||to===head){const checkpoint=await rpc('eth_getBlockByNumber',[hex(to),false]);monitor.checkpointBlock=to;monitor.blockHash=checkpoint.hash;savedCheckpoint=to;}write('data/monitor-state.json',monitor);}
 for(const hash of found)if(!receipts[hash])receipts[hash]=await rpc('eth_getTransactionReceipt',[hash]);
 const nonce=Number(BigInt(await rpc('eth_getTransactionCount',[WALLET,hex(head)])));
 const outgoing=[...found].filter(h=>receipts[h]?.from===WALLET).length;
@@ -37,6 +39,7 @@ let reconciled=missing===0&&pending.length===0&&expectedLiquidity.toString()===s
 const apr={value:null,volume24h:null,tvl:null,status:'官方APR待接入',source:'https://developers.uniswap.org/docs/api-reference/pool_info',sampledAt:asOf};
 // Only verified official displayed APR observations are eligible. Never derive APR.
 const samples=(fs.existsSync('data/apr-samples.json')?read('data/apr-samples.json'):[]).filter(x=>x.method==='official-display');
+monitor.lastChecked=asOf;monitor.nonce=nonce;monitor.missingOutgoing=missing;monitor.pending=pending;write('data/monitor-state.json',monitor);
 const snapshot={asOf,block:head,reconciled,monitor,apr,aprSamples:samples.slice(-720),pool3:{...s,collected,strategyTransfer,walletPons:walletP,walletUsdg:walletU,capital,value,gas:gas3,pnl:value-capital-gas3,roi:(value-capital-gas3)/(capital+gas3)*100},totals:{gas:gasAll,frontCost:9.367608,external:11334.61,value:11925.7305870468-9129.70486823247-strategyTransfer+value,pnl:2606.6796077-1346.627199+(value-capital-gas3)},newOperations:two.map(h=>rows.find(r=>r.hash===h))};
 const latestAddRow=rows.filter(r=>r.pool===3&&r.action==='加倉 / 費用抵扣').at(-1);if(latestAddRow){try{await updateBreakdown(latestAddRow,receipts[latestAddRow.hash])}catch{ /* Keep verified net cashflows when historical valuation is unavailable. */ }}
 write('app/snapshot.json',snapshot);console.log(JSON.stringify(snapshot,null,2));

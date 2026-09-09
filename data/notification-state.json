@@ -1,14 +1,14 @@
 {
-  "day": "2026-09-08",
-  "eligible": false,
+  "day": "2026-09-09",
+  "eligible": true,
   "inRange": true,
   "reconciled": true,
   "discovered": 6,
-  "lastEvaluated": "2026-09-08T14:43:17.000Z",
+  "lastEvaluated": "2026-09-09T09:37:54.000Z",
   "assessment": {
     "cost": 0.19651983679897056,
-    "balance": 10.192267204154586,
-    "threshold": 65.04903870569149,
+    "balance": 70.27210000031863,
+    "threshold": 66.146809452829,
     "assumption": "穩定價格與收益、可配對餘額、歷史操作Gas估算；非最優保證"
   }
 }
