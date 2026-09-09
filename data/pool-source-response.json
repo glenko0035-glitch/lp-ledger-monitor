@@ -1,0 +1,57 @@
+{
+  "attemptedAt": "2026-09-09T08:45:36.715Z",
+  "source": "https://interface.gateway.uniswap.org/v1/graphql",
+  "response": {
+    "data": {
+      "v4Pool": {
+        "poolId": "0x4be9657ec9002e528f4f17a5c43edc525a07f888f7b180c2afbf75e096c4f38a",
+        "feeTier": 3499,
+        "isDynamicFee": false,
+        "token0": {
+          "address": "0x39dBED3a2bd333467115dE45665cC57F813C4571",
+          "decimals": 18,
+          "market": {
+            "price": {
+              "value": 0.8194505010086384
+            }
+          }
+        },
+        "token1": {
+          "address": "0x5fc5360D0400a0Fd4f2af552ADD042D716F1d168",
+          "decimals": 6,
+          "market": {
+            "price": {
+              "value": 1
+            }
+          }
+        },
+        "token0Supply": 8183437.686937048,
+        "token1Supply": 2404955.735457,
+        "volume24h": null,
+        "totalLiquidity": {
+          "value": 8656408.53012193
+        },
+        "rewardsCampaign": null
+      }
+    },
+    "errors": [
+      {
+        "path": [
+          "v4Pool",
+          "volume24h"
+        ],
+        "data": null,
+        "errorType": "ExternalAPIError",
+        "errorInfo": null,
+        "locations": [
+          {
+            "line": 1,
+            "column": 255,
+            "sourceName": null
+          }
+        ],
+        "message": "external API error"
+      }
+    ]
+  }
+}

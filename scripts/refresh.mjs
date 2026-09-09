@@ -1,13 +1,15 @@
 import {updateBreakdown} from './breakdown.mjs';
 import fs from 'node:fs';
+import {refreshPool} from './pool-refresh.mjs';
 import {rpc,state,words,hex,WALLET,MANAGER,POOL,PONS,USDG,amounts} from './chain.mjs';
 const read=f=>JSON.parse(fs.readFileSync(f)),write=(f,x)=>{fs.writeFileSync(f+'.tmp',JSON.stringify(x,null,2));fs.renameSync(f+'.tmp',f)};
 async function refresh(){
+await refreshPool(); // Independent market snapshot survives wallet scan failure.
 const cutoff=1788853787,transfer='0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef',modify='0xf208f4912782fd25c7f114ca3723a2d5dd6f3bcc3ac8db5af63baa85f711d5ec',topic='0x'+WALLET.slice(2).padStart(64,'0');
 const receipts=read('data/receipts.json'),base=read('data/base-ledger.json'),head=Number(BigInt(await rpc('eth_blockNumber',[])))-20,block=await rpc('eth_getBlockByNumber',[hex(head),false]);
 let monitor=fs.existsSync('data/monitor-state.json')?read('data/monitor-state.json'):{cutoff,nonce:45,lastBlock:0,discovered:[],nativeBalance:null};
 if(!monitor.lastBlock){let lo=Number(BigInt(receipts['0xf3cfa2d431effd1cbda2fa84f92e54df08cc15a1517f3838b196eed8a17c39ac'].blockNumber)),hi=head;while(lo<hi){let mid=Math.floor((lo+hi)/2),b=await rpc('eth_getBlockByNumber',[hex(mid),false]);if(Number(BigInt(b.timestamp))<cutoff)lo=mid+1;else hi=mid}monitor.startBlock=lo;monitor.lastBlock=lo-1;}
-async function logs(from,to,topics){if(from>to)return[];try{return await rpc('eth_getLogs',[{fromBlock:hex(from),toBlock:hex(to),topics}])}catch(e){if(to-from<30)throw e;let m=Math.floor((from+to)/2);return [...await logs(from,m,topics),...await logs(m+1,to,topics)]}}
+async function logs(from,to,topics){if(from>to)return[];try{return await rpc('eth_getLogs',[{fromBlock:hex(from),toBlock:hex(to),topics}])}catch(e){if(/429|timeout|fetch failed|503/i.test(String(e))||to-from<30)throw e;let m=Math.floor((from+to)/2);return [...await logs(from,m,topics),...await logs(m+1,to,topics)]}}
 if(monitor.blockHash){const checkpoint=await rpc('eth_getBlockByNumber',[hex(monitor.lastBlock),false]);if(checkpoint.hash!==monitor.blockHash)throw Error('監控游標區塊雜湊改變，需處理鏈重組後重試');}
 const found=new Set(monitor.discovered);for(const topics of [[null,topic],[null,null,topic]]){for(let from=monitor.lastBlock+1;from<=head;from+=10000){for(const l of await logs(from,Math.min(head,from+9999),topics))found.add(l.transactionHash)}}
 for(const hash of found)if(!receipts[hash])receipts[hash]=await rpc('eth_getTransactionReceipt',[hash]);

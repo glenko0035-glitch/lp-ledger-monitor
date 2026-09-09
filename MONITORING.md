@@ -19,4 +19,5 @@
 
 - Schedule changed by user: Beijing00:00,08:00,16:00. Latest batch UI derives from receipt timestamps, not hardcoded history. Reinvestment has claimed-only and collect-plus-add modes; cost uses latest matching operations.
 
-APR requirement: only directly verified Uniswap displayed APR; do not calculate from volume/TVL. Until a direct source is available, show unavailable. Reinvestment evaluation includes unclaimed fees and collect + add gas together.
+Current PRD supersedes older APR notes: scripts/refresh.mjs first runs independent scripts/pool-refresh.mjs. app/pool-market.json stores market history and provenance. Computed fee APR and theoretical daily APY are allowed but must not be called official Total APR. See POOL-MONITOR-PRD.md for formulas, missing source limitations and acceptance status. Reinvestment includes unclaimed fees and collect + add gas together.
+If wallet refresh fails but market snapshot succeeds, still verify/build/publish the independent market update; retain the last successful wallet snapshot and disclose its stale date. No browser opening in heartbeat. Do not fabricate missing volume or use old browser text as a live observation.

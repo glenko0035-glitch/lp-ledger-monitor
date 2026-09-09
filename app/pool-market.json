@@ -1,0 +1,67 @@
+{
+  "latest": {
+    "ponsPrice": 0.8194505010086384,
+    "usdgPrice": 1,
+    "ponsReserves": 8183437.686937048,
+    "usdgReserves": 2404955.735457,
+    "officialTvl": 8656408.53012193,
+    "reserveTvl": 9110877.847990537,
+    "volume24h": null,
+    "apiFeePips": 3499,
+    "feeTier": 0.003,
+    "fees24h": null,
+    "apr": null,
+    "officialApr": null,
+    "apy": null,
+    "tvlDifference": 5.250090915732297,
+    "isDynamicFee": false,
+    "sampledAt": "2026-09-09T08:45:36.715Z",
+    "blockNumber": 58414339,
+    "source": "https://interface.gateway.uniswap.org/v1/graphql",
+    "status": "部分資料可用",
+    "errors": [
+      {
+        "field": "volume24h",
+        "message": "external API error"
+      }
+    ],
+    "method": "official-api",
+    "reserveMethod": "GraphQL tokenSupply；非 pool_info 儲備，口徑待比對",
+    "protocolFeePips": 2048500
+  },
+  "history": [
+    {
+      "ponsPrice": 0.8194505010086384,
+      "usdgPrice": 1,
+      "ponsReserves": 8183437.686937048,
+      "usdgReserves": 2404955.735457,
+      "officialTvl": 8656408.53012193,
+      "reserveTvl": 9110877.847990537,
+      "volume24h": null,
+      "apiFeePips": 3499,
+      "feeTier": 0.003,
+      "fees24h": null,
+      "apr": null,
+      "officialApr": null,
+      "apy": null,
+      "tvlDifference": 5.250090915732297,
+      "isDynamicFee": false,
+      "sampledAt": "2026-09-09T08:45:36.715Z",
+      "blockNumber": 58414339,
+      "source": "https://interface.gateway.uniswap.org/v1/graphql",
+      "status": "部分資料可用",
+      "errors": [
+        {
+          "field": "volume24h",
+          "message": "external API error"
+        }
+      ],
+      "method": "official-api",
+      "reserveMethod": "GraphQL tokenSupply；非 pool_info 儲備，口徑待比對",
+      "protocolFeePips": 2048500
+    }
+  ],
+  "attemptedAt": "2026-09-09T08:45:36.715Z",
+  "lastError": null,
+  "poolInfoConfigured": false
+}
