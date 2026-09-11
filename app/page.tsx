@@ -24,7 +24,7 @@ const latestBatch=ledger.filter(r=>r.pool===3&&r.timestamp>=latestAdd.timestamp-
 const overallRoi=totals.pnl/(totals.external+totals.gas)*100;
 const psBase=[{id:1,nft:'1543159',symbol:'PONS',active:false,capital:11239.106507,value:13857.16804,cost:11.381925,pnl:2606.679608,roi:23.169479,il:3696.59,date:'09/05',fees:'429.014746 PONS + 287.144782 USDG'},{id:2,nft:'1989237',symbol:'SHROOM',active:false,capital:4032.840756,value:2687.509363,cost:1.295806,pnl:-1346.627199,roi:-33.380804,il:494.95,date:'09/06',fees:'3,661.072748 SHROOM + 40.089311 USDG'},{id:3,nft:'1988906',symbol:'PONS',active:true,capital:9801.946812,value:9129.704868,cost:1.357075,pnl:-673.599019,roi:-6.871143,il:null,date:'09/07 15:26',fees:'69.230445 PONS + 53.669261 USDG'}];
 const ps=psBase.map(p=>p.id===3?{...p,capital:current.capital,value:current.value,cost:current.gas,pnl:current.pnl,roi:current.roi,date:asOf,fees:current.collected.pons.toFixed(6)+' PONS + '+current.collected.usdg.toFixed(6)+' USDG（另有加倉時抵扣費用）'}:p);
-const names=['外部本金','池一','池二','池三'];
+const names=['外部本金','池一','池二','池三','待決策持倉'];
 const fmt=(v:number)=>v.toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2});
 const sign=(v:number)=>(v>=0?'+':'−')+'$'+fmt(Math.abs(v));
 function Token({symbol}:{symbol:string}){return <span className={'token '+(symbol==='SHROOM'?'mush':'')}>{symbol==='SHROOM'?'S':'P'}<i>$</i></span>}
