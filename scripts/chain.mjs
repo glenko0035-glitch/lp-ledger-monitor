@@ -1,5 +1,5 @@
 import {AbiCoder,keccak256,solidityPackedKeccak256,toBeHex} from 'ethers';
-export const RPC='https://rpc.mainnet.chain.robinhood.com',WALLET='0x0df5590d07c493ecf14473979bf3d353cb2211ec',MANAGER='0x8366a39cc670b4001a1121b8f6a443a643e40951',POSITION='0x58daec3116aae6d93017baaea7749052e8a04fa7',POOL='0x4be9657ec9002e528f4f17a5c43edc525a07f888f7b180c2afbf75e096c4f38a';
+export const RPC=process.env.ROBINHOOD_RPC_URL||'https://rpc.mainnet.chain.robinhood.com',WALLET='0x0df5590d07c493ecf14473979bf3d353cb2211ec',MANAGER='0x8366a39cc670b4001a1121b8f6a443a643e40951',POSITION='0x58daec3116aae6d93017baaea7749052e8a04fa7',POOL='0x4be9657ec9002e528f4f17a5c43edc525a07f888f7b180c2afbf75e096c4f38a';
 export const PONS='0x39dbed3a2bd333467115de45665cc57f813c4571',USDG='0x5fc5360d0400a0fd4f2af552add042d716f1d168';
 export const words=s=>(s.slice(2).match(/.{64}/g)||[]).map(x=>BigInt('0x'+x)),hex=n=>'0x'+BigInt(n).toString(16),abi=AbiCoder.defaultAbiCoder();
 let lastRequest=0;
