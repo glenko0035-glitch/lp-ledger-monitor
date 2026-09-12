@@ -1,11 +1,11 @@
 {
   "latest": {
-    "ponsPrice": 0.5984409533623933,
+    "ponsPrice": 0.591210786076069,
     "usdgPrice": 1,
-    "ponsReserves": 10139020.24112212,
-    "usdgReserves": 2343665.466289,
-    "officialTvl": 8073542.47261945,
-    "reserveTvl": 8411270.405546725,
+    "ponsReserves": 10073687.208588025,
+    "usdgReserves": 2311364.301081,
+    "officialTvl": 7979131.58607882,
+    "reserveTvl": 8267036.834354768,
     "volume24h": null,
     "apiFeePips": 3499,
     "feeTier": 0.003,
@@ -13,10 +13,10 @@
     "apr": null,
     "officialApr": null,
     "apy": null,
-    "tvlDifference": 4.183144314563814,
+    "tvlDifference": 3.608227852492818,
     "isDynamicFee": false,
-    "sampledAt": "2026-09-12T03:30:21.513Z",
-    "blockNumber": 60787869,
+    "sampledAt": "2026-09-12T04:05:57.742Z",
+    "blockNumber": 60808863,
     "source": "https://interface.gateway.uniswap.org/v1/graphql",
     "status": "部分資料可用",
     "errors": [
@@ -151,12 +151,12 @@
       "protocolFeePips": 2048500
     },
     {
-      "ponsPrice": 0.5984409533623933,
+      "ponsPrice": 0.591210786076069,
       "usdgPrice": 1,
-      "ponsReserves": 10139020.24112212,
-      "usdgReserves": 2343665.466289,
-      "officialTvl": 8073542.47261945,
-      "reserveTvl": 8411270.405546725,
+      "ponsReserves": 10073687.208588025,
+      "usdgReserves": 2311364.301081,
+      "officialTvl": 7979131.58607882,
+      "reserveTvl": 8267036.834354768,
       "volume24h": null,
       "apiFeePips": 3499,
       "feeTier": 0.003,
@@ -164,10 +164,10 @@
       "apr": null,
       "officialApr": null,
       "apy": null,
-      "tvlDifference": 4.183144314563814,
+      "tvlDifference": 3.608227852492818,
       "isDynamicFee": false,
-      "sampledAt": "2026-09-12T03:30:21.513Z",
-      "blockNumber": 60787869,
+      "sampledAt": "2026-09-12T04:05:57.742Z",
+      "blockNumber": 60808863,
       "source": "https://interface.gateway.uniswap.org/v1/graphql",
       "status": "部分資料可用",
       "errors": [
@@ -181,7 +181,7 @@
       "protocolFeePips": 2048500
     }
   ],
-  "attemptedAt": "2026-09-12T03:30:21.513Z",
+  "attemptedAt": "2026-09-12T04:05:57.742Z",
   "lastError": null,
   "poolInfoConfigured": false
 }

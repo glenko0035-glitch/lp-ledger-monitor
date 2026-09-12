@@ -1,1 +1,28 @@
-{"samples":[{"sampledAt":"2026-09-11T09:40:35.702Z","officialApr":520.14,"tvlUsd":5700000,"volume24hUsd":27400000,"fees24hUsd":82300},{"sampledAt":"2026-09-12T03:35:57.076Z","officialApr":411.03,"tvlUsd":5400000,"volume24hUsd":20500000,"fees24hUsd":61400}],"source":"uniswap-official-page","lastError":null}
+{
+  "samples": [
+    {
+      "sampledAt": "2026-09-11T09:40:35.702Z",
+      "officialApr": 520.14,
+      "tvlUsd": 5700000,
+      "volume24hUsd": 27400000,
+      "fees24hUsd": 82300
+    },
+    {
+      "sampledAt": "2026-09-12T03:35:57.076Z",
+      "officialApr": 411.03,
+      "tvlUsd": 5400000,
+      "volume24hUsd": 20500000,
+      "fees24hUsd": 61400
+    },
+    {
+      "sampledAt": "2026-09-12T04:06:53.401Z",
+      "officialApr": 387.31,
+      "tvlUsd": 5400000,
+      "volume24hUsd": 19200000,
+      "fees24hUsd": 57500
+    }
+  ],
+  "source": "uniswap-official-page",
+  "lastError": null,
+  "lastAttemptAt": "2026-09-12T04:06:53.401Z"
+}
