@@ -1,7 +1,7 @@
 {
   "cutoff": 1788853787,
   "nonce": 54,
-  "lastBlock": 60885423,
+  "lastBlock": 61642798,
   "discovered": [
     "0x0624445b49f6fd9b27dc206ce0886de1d72542e0f7f113f77d02265b8ceccab0",
     "0x078ae0e388c756a9e8085f7f76887e0a9b4c96e8376c9838f111dbf5c1d281cb",
@@ -16,11 +16,11 @@
   ],
   "nativeBalance": 0.001503913135743767,
   "startBlock": 57524674,
-  "blockHash": "0xad8e92ba36c977a01bde0b3c023ab70d7f6b09a69c6c1f260a279d6abbefdb60",
-  "lastChecked": "2026-09-12T06:15:29.000Z",
+  "blockHash": "0x4f416b29ef28362b1607a699589e3955b64af7d5709937a446d2b9ec0d2f02e1",
+  "lastChecked": "2026-09-13T03:38:00.000Z",
   "missingOutgoing": 0,
   "pending": [],
   "coverage": "ERC20/NFT事件與發出交易nonce核對；無日誌操作或原生ETH轉入需另核驗",
   "nativeResidual": 0,
-  "checkpointBlock": 60885423
+  "checkpointBlock": 61642798
 }
