@@ -5,7 +5,9 @@ on:
     branches: [main]
   schedule:
     # 01:17, 09:17, 17:17 UTC = 北京时间 09:17, 17:17, 01:17
-    - cron: '17 * * * *'
+    - cron: '17 1,9,17 * * *'
+    # Pool-only sampling during the other hours; no duplicate scheduled runs.
+    - cron: '17 0,2-8,10-16,18-23 * * *'
   workflow_dispatch:
 
 permissions:
@@ -34,13 +36,23 @@ jobs:
           cache: npm
       - run: npm ci
       - name: Refresh wallet every eight hours
-        if: ${{ github.event_name != 'schedule' }}
+        if: ${{ github.event_name != 'schedule' || github.event.schedule == '17 1,9,17 * * *' }}
         run: node scripts/refresh.mjs
-      - name: Scheduled wallet refresh
-        if: ${{ github.event_name == 'schedule' }}
+      - name: Catch up overdue wallet snapshot
+        if: ${{ github.event_name == 'schedule' && github.event.schedule != '17 1,9,17 * * *' }}
         run: |
-          hour=$(date -u +%H)
-          if [ "$hour" = "01" ] || [ "$hour" = "09" ] || [ "$hour" = "17" ]; then node scripts/refresh.mjs; fi
+          node --input-type=module <<'NODE'
+          import fs from 'node:fs';
+          import {execFileSync} from 'node:child_process';
+          const asOf = JSON.parse(fs.readFileSync('app/snapshot.json', 'utf8')).asOf;
+          const age = Date.now() - Date.parse(asOf);
+          if (!Number.isFinite(age) || age >= 8 * 60 * 60 * 1000) {
+            console.log('Wallet snapshot is overdue; catching up. Last snapshot:', asOf);
+            execFileSync(process.execPath, ['scripts/refresh.mjs'], {stdio: 'inherit'});
+          } else {
+            console.log('Wallet snapshot is current; pool-only refresh. Last snapshot:', asOf);
+          }
+          NODE
       - run: npx playwright install --with-deps chromium
       - name: Collect official pool Stats
         id: official
