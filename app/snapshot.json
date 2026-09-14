@@ -1,11 +1,11 @@
 {
-  "asOf": "2026-09-14T03:27:09.000Z",
-  "block": 62487995,
+  "asOf": "2026-09-14T03:29:49.000Z",
+  "block": 62489574,
   "reconciled": true,
   "monitor": {
     "cutoff": 1788853787,
     "nonce": 54,
-    "lastBlock": 62487995,
+    "lastBlock": 62489574,
     "discovered": [
       "0x0624445b49f6fd9b27dc206ce0886de1d72542e0f7f113f77d02265b8ceccab0",
       "0x078ae0e388c756a9e8085f7f76887e0a9b4c96e8376c9838f111dbf5c1d281cb",
@@ -20,13 +20,13 @@
     ],
     "nativeBalance": 0.001503913135743767,
     "startBlock": 57524674,
-    "blockHash": "0xb905b1a0232a37664ecb8739f86fbde297b6964ad70b569160f8f45ea8838f27",
-    "lastChecked": "2026-09-14T03:27:09.000Z",
+    "blockHash": "0x9b74e8bcfc51866b710e32a7106bf0361e5f8bc2d42c64098940f49231d576e9",
+    "lastChecked": "2026-09-14T03:29:49.000Z",
     "missingOutgoing": 0,
     "pending": [],
     "coverage": "ERC20/NFT事件與發出交易nonce核對；無日誌操作或原生ETH轉入需另核驗",
     "nativeResidual": 0,
-    "checkpointBlock": 62487995
+    "checkpointBlock": 62489574
   },
   "apr": {
     "value": null,
@@ -34,19 +34,19 @@
     "tvl": null,
     "status": "官方APR待接入",
     "source": "https://developers.uniswap.org/docs/api-reference/pool_info",
-    "sampledAt": "2026-09-14T03:27:09.000Z"
+    "sampledAt": "2026-09-14T03:29:49.000Z"
   },
   "aprSamples": [],
   "pool3": {
-    "pons": 13111.635358240035,
-    "usdg": 1380.6316213782322,
-    "price": 0.5395394051667531,
+    "pons": 13129.922263828446,
+    "usdg": 1370.771325393414,
+    "price": 0.5388604248704542,
     "liquidity": "21327387607992850",
-    "sqrt": "58195736411542418018972",
-    "tick": -282495,
+    "sqrt": "58159106837068365154713",
+    "tick": -282508,
     "protocolFee": 2048500,
     "lpFee": 3000,
-    "unclaimedPons": 69.96197660573638,
+    "unclaimedPons": 70.01701160305163,
     "unclaimedUsdg": 37.24794,
     "collected": {
       "pons": 429.6471750313427,
@@ -56,17 +56,17 @@
     "walletPons": 279.1132872268579,
     "walletUsdg": 0,
     "capital": 11188.003361812867,
-    "value": 8680.463363533094,
-    "gas": 2.06584303895403,
-    "pnl": -2509.6058413187275,
-    "roi": -22.427080613858987
+    "value": 8671.347256158679,
+    "gas": 2.0648842147305193,
+    "pnl": -2518.7209898689193,
+    "roi": -22.508540023990015
   },
   "totals": {
-    "gas": 5.375966550102441,
+    "gas": 5.375007725878932,
     "frontCost": 9.367608,
     "external": 11334.61,
-    "value": 10090.432532347426,
-    "pnl": -1249.5534326187276
+    "value": 10081.31642497301,
+    "pnl": -1258.6685811689194
   },
   "newOperations": [
     {
@@ -81,9 +81,9 @@
       "timestamp": 1788839475,
       "gasEth": 0.000038484113484,
       "gasPaidByWallet": true,
-      "gasPriceUsd": 2517.089723681961,
-      "gasUsd": 0.0968679665755868,
-      "gasValuation": "2026-09-14T03:27:09.000Z",
+      "gasPriceUsd": 2515.9214613530676,
+      "gasUsd": 0.09682300703554257,
+      "gasValuation": "2026-09-14T03:29:49.000Z",
       "gasPayer": "0x0df5590d07c493ecf14473979bf3d353cb2211ec",
       "cexCost": 0,
       "originalUsdt": 0
@@ -100,9 +100,9 @@
       "timestamp": 1788845839,
       "gasEth": 0.000052100435512,
       "gasPaidByWallet": true,
-      "gasPriceUsd": 2517.089723681961,
-      "gasUsd": 0.1311414708266099,
-      "gasValuation": "2026-09-14T03:27:09.000Z",
+      "gasPriceUsd": 2515.9214613530676,
+      "gasUsd": 0.13108060385048229,
+      "gasValuation": "2026-09-14T03:29:49.000Z",
       "gasPayer": "0x0df5590d07c493ecf14473979bf3d353cb2211ec",
       "cexCost": 0,
       "originalUsdt": 0

@@ -1,5 +1,5 @@
 {
-  "attemptedAt": "2026-09-14T03:27:07.092Z",
+  "attemptedAt": "2026-09-14T03:29:46.302Z",
   "source": "https://interface.gateway.uniswap.org/v1/graphql",
   "response": {
     "data": {
@@ -12,7 +12,7 @@
           "decimals": 18,
           "market": {
             "price": {
-              "value": 0.5379559608502507
+              "value": 0.5380319187044277
             }
           }
         },
