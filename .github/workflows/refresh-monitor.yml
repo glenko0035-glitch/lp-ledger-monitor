@@ -60,12 +60,16 @@ jobs:
         env:
           HEADED: '1'
         run: xvfb-run -a node scripts/official-pool.mjs
+      - name: Refresh ecosystem Dune cache
+        env:
+          DUNE_API_KEY: ${{ secrets.DUNE_API_KEY }}
+        run: node scripts/ecosystem.mjs
       - run: npm run build
       - name: Save updated monitoring data
         run: |
           git config user.name "LP Monitor Bot"
           git config user.email "lp-monitor-bot@users.noreply.github.com"
-          git add app/official-pool.json app/ledger.json app/pool-market.json app/snapshot.json data/monitor-state.json data/pool-source-response.json data/receipts.json
+          git add app/ecosystem/data.json app/official-pool.json app/ledger.json app/pool-market.json app/snapshot.json data/monitor-state.json data/pool-source-response.json data/receipts.json
           git diff --cached --quiet || git commit -m "Refresh LP monitoring snapshot"
           git push
       - name: Deploy to Cloudflare Workers
