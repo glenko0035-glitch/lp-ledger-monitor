@@ -1,0 +1,26 @@
+name: Audit Dune sources
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'scripts/audit-dune.mjs'
+      - '.github/workflows/audit-dune.yml'
+permissions:
+  contents: read
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: node scripts/audit-dune.mjs
+        env:
+          DUNE_API_KEY: ${{ secrets.DUNE_API_KEY }}
+      - uses: actions/upload-artifact@v4
+        with:
+          name: dune-audit
+          path: audit-output/dune-audit.json
+          retention-days: 7
