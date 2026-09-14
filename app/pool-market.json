@@ -1,11 +1,11 @@
 {
   "latest": {
-    "ponsPrice": 0.593859284245937,
+    "ponsPrice": 0.6436372679947817,
     "usdgPrice": 1,
-    "ponsReserves": 10857935.992965983,
-    "usdgReserves": 2724809.822427,
-    "officialTvl": 9010332.43208471,
-    "reserveTvl": 9172895.919597976,
+    "ponsReserves": 10275282.812541084,
+    "usdgReserves": 3136245.204906,
+    "officialTvl": 9329051.84834922,
+    "reserveTvl": 9749800.16224368,
     "volume24h": null,
     "apiFeePips": 3499,
     "feeTier": 0.003,
@@ -13,10 +13,10 @@
     "apr": null,
     "officialApr": null,
     "apy": null,
-    "tvlDifference": 1.804189676003487,
+    "tvlDifference": 4.510086563286841,
     "isDynamicFee": false,
-    "sampledAt": "2026-09-14T15:54:58.340Z",
-    "blockNumber": 62929940,
+    "sampledAt": "2026-09-14T20:57:51.195Z",
+    "blockNumber": 63108346,
     "source": "https://interface.gateway.uniswap.org/v1/graphql",
     "status": "部分資料可用",
     "errors": [
@@ -329,9 +329,39 @@
       "method": "official-api",
       "reserveMethod": "GraphQL tokenSupply；非 pool_info 儲備，口徑待比對",
       "protocolFeePips": 2048500
+    },
+    {
+      "ponsPrice": 0.6436372679947817,
+      "usdgPrice": 1,
+      "ponsReserves": 10275282.812541084,
+      "usdgReserves": 3136245.204906,
+      "officialTvl": 9329051.84834922,
+      "reserveTvl": 9749800.16224368,
+      "volume24h": null,
+      "apiFeePips": 3499,
+      "feeTier": 0.003,
+      "fees24h": null,
+      "apr": null,
+      "officialApr": null,
+      "apy": null,
+      "tvlDifference": 4.510086563286841,
+      "isDynamicFee": false,
+      "sampledAt": "2026-09-14T20:57:51.195Z",
+      "blockNumber": 63108346,
+      "source": "https://interface.gateway.uniswap.org/v1/graphql",
+      "status": "部分資料可用",
+      "errors": [
+        {
+          "field": "volume24h",
+          "message": "external API error"
+        }
+      ],
+      "method": "official-api",
+      "reserveMethod": "GraphQL tokenSupply；非 pool_info 儲備，口徑待比對",
+      "protocolFeePips": 2048500
     }
   ],
-  "attemptedAt": "2026-09-14T15:54:58.340Z",
+  "attemptedAt": "2026-09-14T20:57:51.195Z",
   "lastError": null,
   "poolInfoConfigured": false
 }
