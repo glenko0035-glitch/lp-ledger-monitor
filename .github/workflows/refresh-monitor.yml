@@ -64,6 +64,10 @@ jobs:
         env:
           DUNE_API_KEY: ${{ secrets.DUNE_API_KEY }}
         run: node scripts/ecosystem.mjs
+      - name: Verify portfolio accounting
+        run: |
+          node scripts/portfolio.test.mjs
+          node scripts/verify.mjs
       - run: npm run build
       - name: Save updated monitoring data
         run: |

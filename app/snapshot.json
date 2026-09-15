@@ -63,11 +63,23 @@
     "roi": -12.213978794975525
   },
   "totals": {
+    "value": 11096.815282363115,
+    "external": 11334.61,
     "gas": 5.382591805676472,
     "frontCost": 9.367608,
-    "external": 11334.61,
-    "value": 11238.641985350441,
-    "pnl": -101.35060487128635
+    "pnl": -243.17730944256172,
+    "breakdown": {
+      "lpValue": 9508.654825200076,
+      "unclaimedValue": 51.29886540302611,
+      "walletPons": 2098.4428078814076,
+      "walletUsdg": 220.68834200000205,
+      "walletPonsValue": 1316.1732497600112,
+      "independentPons": 1739.8524856421238,
+      "independentValue": 1091.2602866897112,
+      "lpRelatedWalletPons": 358.59032223928375,
+      "lpRelatedWalletPonsValue": 224.91296307030007,
+      "method": "ledger-balances-v1"
+    }
   },
   "newOperations": [
     {

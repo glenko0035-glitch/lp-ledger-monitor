@@ -1,5 +1,6 @@
 import {updateBreakdown} from './breakdown.mjs';
 import fs from 'node:fs';
+import {portfolio} from './portfolio.mjs';
 import {refreshPool} from './pool-refresh.mjs';
 import {rpc,state,words,hex,WALLET,MANAGER,POOL,PONS,USDG,amounts} from './chain.mjs';
 const read=f=>JSON.parse(fs.readFileSync(f)),write=(f,x)=>{fs.writeFileSync(f+'.tmp',JSON.stringify(x,null,2));fs.renameSync(f+'.tmp',f)};
@@ -43,7 +44,9 @@ const apr={value:null,volume24h:null,tvl:null,status:'官方APR待接入',source
 // Only verified official displayed APR observations are eligible. Never derive APR.
 const samples=(fs.existsSync('data/apr-samples.json')?read('data/apr-samples.json'):[]).filter(x=>x.method==='official-display');
 monitor.lastChecked=asOf;monitor.nonce=nonce;monitor.missingOutgoing=missing;monitor.pending=pending;write('data/monitor-state.json',monitor);
-const snapshot={asOf,block:head,reconciled,monitor,apr,aprSamples:samples.slice(-720),pool3:{...s,collected,strategyTransfer,walletPons:walletP,walletUsdg:walletU,capital,value,gas:gas3,pnl:value-capital-gas3,roi:(value-capital-gas3)/(capital+gas3)*100},totals:{gas:gasAll,frontCost:9.367608,external:11334.61,value:11925.7305870468-9129.70486823247-strategyTransfer+value,pnl:2606.6796077-1346.627199+(value-capital-gas3)},newOperations:two.map(h=>rows.find(r=>r.hash===h))};
+const totals=portfolio(rows,s);
+reconciled=reconciled&&totals.breakdown.walletPons>=-1e-6&&totals.breakdown.walletUsdg>=-1e-6;
+const snapshot={asOf,block:head,reconciled,monitor,apr,aprSamples:samples.slice(-720),pool3:{...s,collected,strategyTransfer,walletPons:walletP,walletUsdg:walletU,capital,value,gas:gas3,pnl:value-capital-gas3,roi:(value-capital-gas3)/(capital+gas3)*100},totals,newOperations:two.map(h=>rows.find(r=>r.hash===h))};
 const latestAddRow=rows.filter(r=>r.pool===3&&r.action==='加倉 / 費用抵扣').at(-1);if(latestAddRow){try{await updateBreakdown(latestAddRow,receipts[latestAddRow.hash])}catch{ /* Keep verified net cashflows when historical valuation is unavailable. */ }}
 write('app/snapshot.json',snapshot);console.log(JSON.stringify(snapshot,null,2));
 write('data/receipts.json',receipts);write('app/ledger.json',rows);
