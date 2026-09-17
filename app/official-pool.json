@@ -342,9 +342,16 @@
       "tvlUsd": 5100000,
       "volume24hUsd": 9100000,
       "fees24hUsd": 27200
+    },
+    {
+      "sampledAt": "2026-09-17T06:11:52.251Z",
+      "officialApr": 174.55,
+      "tvlUsd": 5200000,
+      "volume24hUsd": 8300000.000000001,
+      "fees24hUsd": 25000
     }
   ],
   "source": "uniswap-official-page",
   "lastError": null,
-  "lastAttemptAt": "2026-09-17T04:50:47.590Z"
+  "lastAttemptAt": "2026-09-17T06:11:52.251Z"
 }

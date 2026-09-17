@@ -1,11 +1,11 @@
 {
   "latest": {
-    "ponsPrice": 0.6363153411844337,
-    "usdgPrice": 0.9999999999999999,
-    "ponsReserves": 8514859.011802308,
-    "usdgReserves": 3707912.277251,
-    "officialTvl": 9370459.6579361,
-    "reserveTvl": 9126047.694483336,
+    "ponsPrice": 0.6415938104392136,
+    "usdgPrice": 1,
+    "ponsReserves": 8302620.978246126,
+    "usdgReserves": 3873609.754826,
+    "officialTvl": 9535624.90331957,
+    "reserveTvl": 9200519.984891484,
     "volume24h": null,
     "apiFeePips": 3499,
     "feeTier": 0.003,
@@ -13,10 +13,10 @@
     "apr": null,
     "officialApr": null,
     "apy": null,
-    "tvlDifference": -2.608324163113651,
+    "tvlDifference": -3.514241822907993,
     "isDynamicFee": false,
-    "sampledAt": "2026-09-17T04:49:48.337Z",
-    "blockNumber": 65093532,
+    "sampledAt": "2026-09-17T06:10:52.378Z",
+    "blockNumber": 65141843,
     "source": "https://interface.gateway.uniswap.org/v1/graphql",
     "status": "部分資料可用",
     "errors": [
@@ -541,12 +541,12 @@
       "protocolFeePips": 2048500
     },
     {
-      "ponsPrice": 0.6363153411844337,
-      "usdgPrice": 0.9999999999999999,
-      "ponsReserves": 8514859.011802308,
-      "usdgReserves": 3707912.277251,
-      "officialTvl": 9370459.6579361,
-      "reserveTvl": 9126047.694483336,
+      "ponsPrice": 0.6415938104392136,
+      "usdgPrice": 1,
+      "ponsReserves": 8302620.978246126,
+      "usdgReserves": 3873609.754826,
+      "officialTvl": 9535624.90331957,
+      "reserveTvl": 9200519.984891484,
       "volume24h": null,
       "apiFeePips": 3499,
       "feeTier": 0.003,
@@ -554,10 +554,10 @@
       "apr": null,
       "officialApr": null,
       "apy": null,
-      "tvlDifference": -2.608324163113651,
+      "tvlDifference": -3.514241822907993,
       "isDynamicFee": false,
-      "sampledAt": "2026-09-17T04:49:48.337Z",
-      "blockNumber": 65093532,
+      "sampledAt": "2026-09-17T06:10:52.378Z",
+      "blockNumber": 65141843,
       "source": "https://interface.gateway.uniswap.org/v1/graphql",
       "status": "部分資料可用",
       "errors": [
@@ -571,7 +571,7 @@
       "protocolFeePips": 2048500
     }
   ],
-  "attemptedAt": "2026-09-17T04:49:48.337Z",
+  "attemptedAt": "2026-09-17T06:10:52.378Z",
   "lastError": null,
   "poolInfoConfigured": false
 }
