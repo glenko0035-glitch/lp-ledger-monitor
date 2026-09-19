@@ -1,11 +1,11 @@
 {
   "latest": {
-    "ponsPrice": 0.6319468083804466,
-    "usdgPrice": 1,
-    "ponsReserves": 7992985.064694191,
-    "usdgReserves": 2872469.928728,
-    "officialTvl": 8269657.89355728,
-    "reserveTvl": 7923611.329794072,
+    "ponsPrice": 0.5808988321245112,
+    "usdgPrice": 0.9999999999999999,
+    "ponsReserves": 8190119.966662726,
+    "usdgReserves": 2737880.729791,
+    "officialTvl": 8151607.55417275,
+    "reserveTvl": 7495511.853385018,
     "volume24h": null,
     "apiFeePips": 3499,
     "feeTier": 0.003,
@@ -13,10 +13,10 @@
     "apr": null,
     "officialApr": null,
     "apy": null,
-    "tvlDifference": -4.184533002662738,
+    "tvlDifference": -8.048666430854867,
     "isDynamicFee": false,
-    "sampledAt": "2026-09-19T13:12:12.878Z",
-    "blockNumber": 67108596,
+    "sampledAt": "2026-09-19T19:20:31.790Z",
+    "blockNumber": 67328137,
     "source": "https://interface.gateway.uniswap.org/v1/graphql",
     "status": "部分資料可用",
     "errors": [
@@ -779,9 +779,39 @@
       "method": "official-api",
       "reserveMethod": "GraphQL tokenSupply；非 pool_info 儲備，口徑待比對",
       "protocolFeePips": 2048500
+    },
+    {
+      "ponsPrice": 0.5808988321245112,
+      "usdgPrice": 0.9999999999999999,
+      "ponsReserves": 8190119.966662726,
+      "usdgReserves": 2737880.729791,
+      "officialTvl": 8151607.55417275,
+      "reserveTvl": 7495511.853385018,
+      "volume24h": null,
+      "apiFeePips": 3499,
+      "feeTier": 0.003,
+      "fees24h": null,
+      "apr": null,
+      "officialApr": null,
+      "apy": null,
+      "tvlDifference": -8.048666430854867,
+      "isDynamicFee": false,
+      "sampledAt": "2026-09-19T19:20:31.790Z",
+      "blockNumber": 67328137,
+      "source": "https://interface.gateway.uniswap.org/v1/graphql",
+      "status": "部分資料可用",
+      "errors": [
+        {
+          "field": "volume24h",
+          "message": "external API error"
+        }
+      ],
+      "method": "official-api",
+      "reserveMethod": "GraphQL tokenSupply；非 pool_info 儲備，口徑待比對",
+      "protocolFeePips": 2048500
     }
   ],
-  "attemptedAt": "2026-09-19T13:12:12.878Z",
+  "attemptedAt": "2026-09-19T19:20:31.790Z",
   "lastError": null,
   "poolInfoConfigured": false
 }
