@@ -1,11 +1,11 @@
 {
   "latest": {
-    "ponsPrice": 0.5692975988416029,
-    "usdgPrice": 0.9999999999999999,
-    "ponsReserves": 8677598.807688551,
-    "usdgReserves": 2435100.458376,
-    "officialTvl": 7621638.32182418,
-    "reserveTvl": 7375236.623303848,
+    "ponsPrice": 0.5707512705194177,
+    "usdgPrice": 1,
+    "ponsReserves": 9009128.178416807,
+    "usdgReserves": 2204702.465714,
+    "officialTvl": 7342581.46421386,
+    "reserveTvl": 7346673.81981768,
     "volume24h": null,
     "apiFeePips": 3499,
     "feeTier": 0.003,
@@ -13,10 +13,10 @@
     "apr": null,
     "officialApr": null,
     "apy": null,
-    "tvlDifference": -3.2329230031130307,
+    "tvlDifference": 0.055734561799081206,
     "isDynamicFee": false,
-    "sampledAt": "2026-09-20T13:36:10.964Z",
-    "blockNumber": 67978886,
+    "sampledAt": "2026-09-20T19:29:36.085Z",
+    "blockNumber": 68190242,
     "source": "https://interface.gateway.uniswap.org/v1/graphql",
     "status": "部分資料可用",
     "errors": [
@@ -869,9 +869,39 @@
       "method": "official-api",
       "reserveMethod": "GraphQL tokenSupply；非 pool_info 儲備，口徑待比對",
       "protocolFeePips": 2048500
+    },
+    {
+      "ponsPrice": 0.5707512705194177,
+      "usdgPrice": 1,
+      "ponsReserves": 9009128.178416807,
+      "usdgReserves": 2204702.465714,
+      "officialTvl": 7342581.46421386,
+      "reserveTvl": 7346673.81981768,
+      "volume24h": null,
+      "apiFeePips": 3499,
+      "feeTier": 0.003,
+      "fees24h": null,
+      "apr": null,
+      "officialApr": null,
+      "apy": null,
+      "tvlDifference": 0.055734561799081206,
+      "isDynamicFee": false,
+      "sampledAt": "2026-09-20T19:29:36.085Z",
+      "blockNumber": 68190242,
+      "source": "https://interface.gateway.uniswap.org/v1/graphql",
+      "status": "部分資料可用",
+      "errors": [
+        {
+          "field": "volume24h",
+          "message": "external API error"
+        }
+      ],
+      "method": "official-api",
+      "reserveMethod": "GraphQL tokenSupply；非 pool_info 儲備，口徑待比對",
+      "protocolFeePips": 2048500
     }
   ],
-  "attemptedAt": "2026-09-20T13:36:10.964Z",
+  "attemptedAt": "2026-09-20T19:29:36.085Z",
   "lastError": null,
   "poolInfoConfigured": false
 }
