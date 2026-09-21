@@ -1,33 +1,29 @@
 {
   "latest": {
-    "ponsPrice": 0.5707512705194177,
+    "ponsPrice": 0.596214435482211,
     "usdgPrice": 1,
-    "ponsReserves": 9009128.178416807,
-    "usdgReserves": 2204702.465714,
-    "officialTvl": 7342581.46421386,
-    "reserveTvl": 7346673.81981768,
-    "volume24h": null,
+    "ponsReserves": 8789998.473150082,
+    "usdgReserves": 2293731.591532,
+    "officialTvl": 7440059.55600763,
+    "reserveTvl": 7534455.569090672,
+    "volume24h": 4374832.84800297,
     "apiFeePips": 3499,
     "feeTier": 0.003,
-    "fees24h": null,
-    "apr": null,
+    "fees24h": 13124.498544008911,
+    "apr": 64.38714545900524,
     "officialApr": null,
-    "apy": null,
-    "tvlDifference": 0.055734561799081206,
+    "apy": 90.27576275389433,
+    "tvlDifference": 1.268753460539429,
     "isDynamicFee": false,
-    "sampledAt": "2026-09-20T19:29:36.085Z",
-    "blockNumber": 68190242,
+    "sampledAt": "2026-09-21T06:25:33.970Z",
+    "blockNumber": 68580733,
     "source": "https://interface.gateway.uniswap.org/v1/graphql",
-    "status": "部分資料可用",
-    "errors": [
-      {
-        "field": "volume24h",
-        "message": "external API error"
-      }
-    ],
+    "status": "統計已更新",
+    "errors": [],
     "method": "official-api",
     "reserveMethod": "GraphQL tokenSupply；非 pool_info 儲備，口徑待比對",
-    "protocolFeePips": 2048500
+    "protocolFeePips": 2048500,
+    "aprMethod": "按官方成交量與鏈上LP費率估算；非官方Total APR，未加獎勵"
   },
   "history": [
     {
@@ -899,9 +895,35 @@
       "method": "official-api",
       "reserveMethod": "GraphQL tokenSupply；非 pool_info 儲備，口徑待比對",
       "protocolFeePips": 2048500
+    },
+    {
+      "ponsPrice": 0.596214435482211,
+      "usdgPrice": 1,
+      "ponsReserves": 8789998.473150082,
+      "usdgReserves": 2293731.591532,
+      "officialTvl": 7440059.55600763,
+      "reserveTvl": 7534455.569090672,
+      "volume24h": 4374832.84800297,
+      "apiFeePips": 3499,
+      "feeTier": 0.003,
+      "fees24h": 13124.498544008911,
+      "apr": 64.38714545900524,
+      "officialApr": null,
+      "apy": 90.27576275389433,
+      "tvlDifference": 1.268753460539429,
+      "isDynamicFee": false,
+      "sampledAt": "2026-09-21T06:25:33.970Z",
+      "blockNumber": 68580733,
+      "source": "https://interface.gateway.uniswap.org/v1/graphql",
+      "status": "統計已更新",
+      "errors": [],
+      "method": "official-api",
+      "reserveMethod": "GraphQL tokenSupply；非 pool_info 儲備，口徑待比對",
+      "protocolFeePips": 2048500,
+      "aprMethod": "按官方成交量與鏈上LP費率估算；非官方Total APR，未加獎勵"
     }
   ],
-  "attemptedAt": "2026-09-20T19:29:36.085Z",
+  "attemptedAt": "2026-09-21T06:25:33.970Z",
   "lastError": null,
   "poolInfoConfigured": false
 }

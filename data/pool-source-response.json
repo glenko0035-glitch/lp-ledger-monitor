@@ -1,5 +1,5 @@
 {
-  "attemptedAt": "2026-09-20T19:29:36.085Z",
+  "attemptedAt": "2026-09-21T06:25:33.970Z",
   "source": "https://interface.gateway.uniswap.org/v1/graphql",
   "response": {
     "data": {
@@ -12,7 +12,7 @@
           "decimals": 18,
           "market": {
             "price": {
-              "value": 0.5707512705194177
+              "value": 0.596214435482211
             }
           }
         },
@@ -25,33 +25,16 @@
             }
           }
         },
-        "token0Supply": 9009128.178416807,
-        "token1Supply": 2204702.465714,
-        "volume24h": null,
+        "token0Supply": 8789998.473150082,
+        "token1Supply": 2293731.591532,
+        "volume24h": {
+          "value": 4374832.84800297
+        },
         "totalLiquidity": {
-          "value": 7342581.46421386
+          "value": 7440059.55600763
         },
         "rewardsCampaign": null
       }
-    },
-    "errors": [
-      {
-        "path": [
-          "v4Pool",
-          "volume24h"
-        ],
-        "data": null,
-        "errorType": "ExternalAPIError",
-        "errorInfo": null,
-        "locations": [
-          {
-            "line": 1,
-            "column": 255,
-            "sourceName": null
-          }
-        ],
-        "message": "external API error"
-      }
-    ]
+    }
   }
 }
