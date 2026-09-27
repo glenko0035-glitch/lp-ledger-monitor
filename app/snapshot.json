@@ -1,11 +1,11 @@
 {
-  "asOf": "2026-09-26T19:54:01.000Z",
-  "block": 73348752,
-  "reconciled": false,
+  "asOf": "2026-09-27T05:15:56.000Z",
+  "block": 73682193,
+  "reconciled": true,
   "monitor": {
     "cutoff": 1788853787,
     "nonce": 66,
-    "lastBlock": 73348752,
+    "lastBlock": 73682193,
     "discovered": [
       "0x0624445b49f6fd9b27dc206ce0886de1d72542e0f7f113f77d02265b8ceccab0",
       "0x078ae0e388c756a9e8085f7f76887e0a9b4c96e8376c9838f111dbf5c1d281cb",
@@ -36,17 +36,13 @@
     ],
     "nativeBalance": 0.001503913135743767,
     "startBlock": 57524674,
-    "blockHash": "0xa9079e7ceb17f90ada5679d97caaf06ea4eabd8640eeb9dbcaea033d273e8f40",
-    "lastChecked": "2026-09-26T19:54:01.000Z",
+    "blockHash": "0xd784555aa5831c5f5577dd1ff07ae9e276379395041d53ef061b71a4c6efa05f",
+    "lastChecked": "2026-09-27T05:15:56.000Z",
     "missingOutgoing": 0,
-    "pending": [
-      "0x9bb8df16cef31672b0754c047a0b6e6fa8da45598220ad2b9791aeff608915d7",
-      "0x5121a97e8bcfb4f3c0b136346636611127864047c166e07724c2bb573f432154",
-      "0x4173f161a7bf03f1fc6d63b993bc770542b7fd41ece31baf3c6660d67427c654"
-    ],
+    "pending": [],
     "coverage": "ERC20/NFT事件與發出交易nonce核對；無日誌操作或原生ETH轉入需另核驗",
     "nativeResidual": 0,
-    "checkpointBlock": 73348752
+    "checkpointBlock": 73682193
   },
   "apr": {
     "value": null,
@@ -54,16 +50,16 @@
     "tvl": null,
     "status": "官方APR待接入",
     "source": "https://developers.uniswap.org/docs/api-reference/pool_info",
-    "sampledAt": "2026-09-26T19:54:01.000Z"
+    "sampledAt": "2026-09-27T05:15:56.000Z"
   },
   "aprSamples": [],
   "pool3": {
     "pons": 0,
     "usdg": 0,
-    "price": 0.6434439539905401,
+    "price": 0.6120384246677927,
     "liquidity": "0",
-    "sqrt": "63552837546549297847564",
-    "tick": -280734,
+    "sqrt": "61982477020570353191857",
+    "tick": -281234,
     "protocolFee": 2048500,
     "lpFee": 3000,
     "unclaimedPons": 0,
@@ -76,27 +72,27 @@
     "walletPons": 11141.767855792752,
     "walletUsdg": 1845.4192219999998,
     "capital": 9801.946811812868,
-    "value": 9014.52238557599,
-    "gas": 2.3248218685739217,
-    "pnl": -789.7492481054514,
-    "roi": -8.055154708202487
+    "value": 8664.609268473647,
+    "gas": 2.334425522638943,
+    "pnl": -1139.67196886186,
+    "roi": -11.624227633555591
   },
   "totals": {
-    "value": 5746.779433825315,
+    "value": 5466.287793642747,
     "external": 11334.61,
-    "gas": 5.678401427728985,
+    "gas": 5.68818459526888,
     "frontCost": 9.367608,
-    "pnl": -5593.5089676024145,
+    "pnl": -5874.010390952522,
     "breakdown": {
       "lpValue": 0,
       "unclaimedValue": 0,
       "walletPons": 8931.282045910406,
       "walletUsdg": 2.2737367544323206e-12,
-      "walletPonsValue": 5746.7794338253125,
+      "walletPonsValue": 5466.287793642745,
       "independentPons": 1739.8524856421238,
-      "independentValue": 1119.4975627218375,
+      "independentValue": 1064.856574466749,
       "lpRelatedWalletPons": 7191.429560268282,
-      "lpRelatedWalletPonsValue": 4627.281871103475,
+      "lpRelatedWalletPonsValue": 4401.431219175996,
       "method": "ledger-balances-v1"
     }
   },
@@ -113,9 +109,9 @@
       "timestamp": 1788839475,
       "gasEth": 0.000038484113484,
       "gasPaidByWallet": true,
-      "gasPriceUsd": 2683.656833610586,
-      "gasUsd": 0.1032781541367819,
-      "gasValuation": "2026-09-26T19:54:01.000Z",
+      "gasPriceUsd": 2694.742806350096,
+      "gasUsd": 0.10370478796976974,
+      "gasValuation": "2026-09-27T05:15:56.000Z",
       "gasPayer": "0x0df5590d07c493ecf14473979bf3d353cb2211ec",
       "cexCost": 0,
       "originalUsdt": 0
@@ -132,9 +128,9 @@
       "timestamp": 1788845839,
       "gasEth": 0.000052100435512,
       "gasPaidByWallet": true,
-      "gasPriceUsd": 2683.656833610586,
-      "gasUsd": 0.13981968979586645,
-      "gasValuation": "2026-09-26T19:54:01.000Z",
+      "gasPriceUsd": 2694.742806350096,
+      "gasUsd": 0.1403972738036691,
+      "gasValuation": "2026-09-27T05:15:56.000Z",
       "gasPayer": "0x0df5590d07c493ecf14473979bf3d353cb2211ec",
       "cexCost": 0,
       "originalUsdt": 0
