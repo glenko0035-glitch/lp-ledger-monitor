@@ -1,5 +1,5 @@
 {
-  "attemptedAt": "2026-09-27T14:43:22.276Z",
+  "attemptedAt": "2026-09-27T20:11:20.451Z",
   "source": "https://interface.gateway.uniswap.org/v1/graphql",
   "response": {
     "data": {
@@ -12,7 +12,7 @@
           "decimals": 18,
           "market": {
             "price": {
-              "value": 0.5901182904412249
+              "value": 0.5893529949614564
             }
           }
         },
@@ -21,17 +21,17 @@
           "decimals": 6,
           "market": {
             "price": {
-              "value": 1.0000000000000002
+              "value": 1
             }
           }
         },
-        "token0Supply": 7589598.847535358,
-        "token1Supply": 1634322.582533,
+        "token0Supply": 7549106.612276622,
+        "token1Supply": 1650440.81276,
         "volume24h": {
-          "value": 1825525.3783910275
+          "value": 2231365.347478986
         },
         "totalLiquidity": {
-          "value": 6113646.83130843
+          "value": 6094791.09444679
         },
         "rewardsCampaign": null
       }
