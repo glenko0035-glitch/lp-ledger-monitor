@@ -1,11 +1,11 @@
 // Strategy balances are reconstructed from recorded cashflows, not historical valuations.
-export function portfolio(rows,position){
+export function portfolio(rows,position,otherPositions=[]){
  const sum=(items,key)=>items.reduce((n,r)=>n+r[key],0);
  const walletPons=sum(rows.filter(r=>r.symbol==='PONS'),'token');
  const walletUsdg=sum(rows,'usd');
- const independentPons=sum(rows.filter(r=>r.pool===4&&r.symbol==='PONS'),'token');
- const lpValue=position.pons*position.price+position.usdg;
- const unclaimedValue=position.unclaimedPons*position.price+position.unclaimedUsdg;
+ const independentPons=sum(rows.filter(r=>(r.category==='investment'||(r.pool===4&&!r.category))&&r.symbol==='PONS'),'token');
+ const lpValue=[position,...otherPositions].reduce((n,p)=>n+p.pons*position.price+p.usdg,0);
+ const unclaimedValue=[position,...otherPositions].reduce((n,p)=>n+p.unclaimedPons*position.price+p.unclaimedUsdg,0);
  const walletPonsValue=walletPons*position.price;
  const independentValue=independentPons*position.price;
  const value=lpValue+unclaimedValue+walletPonsValue+walletUsdg;

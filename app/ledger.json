@@ -623,10 +623,10 @@
     "originalUsdt": 0
   },
   {
-    "pool": 4,
+    "pool": 5,
     "hash": "0x5cb234a261e7717f96fa8f6ad480c936d8324fb2ed2bc1bd499afcedd3ba90e7",
     "time": "09-09 23:48",
-    "action": "換幣／待決策持倉",
+    "action": "買入 PONS／獨立投資",
     "usd": -1233.086991,
     "token": 1739.8524856421238,
     "symbol": "PONS",
@@ -639,7 +639,8 @@
     "gasValuation": "2026-09-28T06:59:25.000Z",
     "gasPayer": "0x942b41d990133d8d9989bf3bb2f89f9aa1d127fd",
     "cexCost": 0,
-    "originalUsdt": 0
+    "originalUsdt": 0,
+    "category": "investment"
   },
   {
     "pool": 3,
@@ -721,11 +722,11 @@
     "pool": -1,
     "hash": "0x920c5fc146158cb932487d9dc5b4e188eff1ec4357a4940c48df7cf4df35b31f",
     "time": "09-17 10:43",
-    "action": "新交易待分類",
+    "action": "無關代幣記錄／不計盈虧",
     "usd": 0,
     "token": 0,
     "symbol": "PONS",
-    "recognized": false,
+    "recognized": true,
     "timestamp": 1789613000,
     "gasEth": 0.000991877998142,
     "gasPaidByWallet": false,
@@ -734,7 +735,9 @@
     "gasValuation": "2026-09-28T06:59:25.000Z",
     "gasPayer": "0x1cf438b884cfd1274dab66bb20e37fd2d11f389c",
     "cexCost": 0,
-    "originalUsdt": 0
+    "originalUsdt": 0,
+    "category": "excluded",
+    "excludedFromPnl": true
   },
   {
     "pool": 3,
@@ -759,11 +762,11 @@
     "pool": -1,
     "hash": "0xd17dd4ef1985bb80c4a704ddcab6cb163e0d50e00f937ba7f1619acd9385e617",
     "time": "09-20 03:53",
-    "action": "新交易待分類",
+    "action": "無關代幣記錄／不計盈虧",
     "usd": 0,
     "token": 0,
     "symbol": "PONS",
-    "recognized": false,
+    "recognized": true,
     "timestamp": 1789847632,
     "gasEth": 0.000223069897752,
     "gasPaidByWallet": false,
@@ -772,17 +775,19 @@
     "gasValuation": "2026-09-28T06:59:25.000Z",
     "gasPayer": "0x4077238a0a060fc3be1ac9d2715ca7db210af30e",
     "cexCost": 0,
-    "originalUsdt": 0
+    "originalUsdt": 0,
+    "category": "excluded",
+    "excludedFromPnl": true
   },
   {
     "pool": -1,
     "hash": "0x5fce25db592a1d6fc1d16e0b9166745ce8327dbc23b5cbd94f1448f1b28fd855",
     "time": "09-20 06:09",
-    "action": "新交易待分類",
+    "action": "無關代幣記錄／不計盈虧",
     "usd": 0,
     "token": 0,
     "symbol": "PONS",
-    "recognized": false,
+    "recognized": true,
     "timestamp": 1789855767,
     "gasEth": 0.000197217601284,
     "gasPaidByWallet": false,
@@ -791,17 +796,19 @@
     "gasValuation": "2026-09-28T06:59:25.000Z",
     "gasPayer": "0x9a30cf4527d2cc80884405e16337149ab59e3d6e",
     "cexCost": 0,
-    "originalUsdt": 0
+    "originalUsdt": 0,
+    "category": "excluded",
+    "excludedFromPnl": true
   },
   {
     "pool": -1,
     "hash": "0xe2cd46e75844c3de6efb9d7b8526562956231256117465f7b4b62b945d9a7d10",
     "time": "09-21 01:12",
-    "action": "新交易待分類",
+    "action": "無關代幣記錄／不計盈虧",
     "usd": 0,
     "token": 0,
     "symbol": "PONS",
-    "recognized": false,
+    "recognized": true,
     "timestamp": 1789924373,
     "gasEth": 0.00020025939258,
     "gasPaidByWallet": false,
@@ -810,7 +817,9 @@
     "gasValuation": "2026-09-28T06:59:25.000Z",
     "gasPayer": "0xab08fd3d010e772a0a3fa1da37e0459c34ed2948",
     "cexCost": 0,
-    "originalUsdt": 0
+    "originalUsdt": 0,
+    "category": "excluded",
+    "excludedFromPnl": true
   },
   {
     "pool": 3,
@@ -854,7 +863,7 @@
     "pool": 3,
     "hash": "0xd81d14872e9fe5f2d37c7e2ab0ec85a16d8ad3f48dc9d8dbf0948f86360b882f",
     "time": "09-27 00:41",
-    "action": "減少流動性",
+    "action": "關閉池三／撤出全部流動性",
     "usd": 2971.256011,
     "token": 10448.008501548758,
     "symbol": "PONS",
@@ -867,7 +876,8 @@
     "gasValuation": "2026-09-28T06:59:25.000Z",
     "gasPayer": "0x0df5590d07c493ecf14473979bf3d353cb2211ec",
     "cexCost": 0,
-    "originalUsdt": 0
+    "originalUsdt": 0,
+    "category": "lp"
   },
   {
     "pool": 3,
@@ -889,14 +899,14 @@
     "originalUsdt": 0
   },
   {
-    "pool": -1,
+    "pool": 6,
     "hash": "0x9bb8df16cef31672b0754c047a0b6e6fa8da45598220ad2b9791aeff608915d7",
     "time": "09-27 00:48",
-    "action": "新交易待分類",
+    "action": "臨時 LP 開倉 #3325305",
     "usd": 0,
     "token": -12881.620341653766,
     "symbol": "PONS",
-    "recognized": false,
+    "recognized": true,
     "timestamp": 1790441334,
     "gasEth": 0.000005411728626,
     "gasPaidByWallet": true,
@@ -905,17 +915,18 @@
     "gasValuation": "2026-09-28T06:59:25.000Z",
     "gasPayer": "0x0df5590d07c493ecf14473979bf3d353cb2211ec",
     "cexCost": 0,
-    "originalUsdt": 0
+    "originalUsdt": 0,
+    "category": "temporary-lp"
   },
   {
-    "pool": -1,
+    "pool": 6,
     "hash": "0x5121a97e8bcfb4f3c0b136346636611127864047c166e07724c2bb573f432154",
     "time": "09-27 00:50",
-    "action": "新交易待分類",
+    "action": "臨時 LP 撤出 #3325305",
     "usd": 0,
     "token": 12881.620341653766,
     "symbol": "PONS",
-    "recognized": false,
+    "recognized": true,
     "timestamp": 1790441409,
     "gasEth": 0.000002920833944,
     "gasPaidByWallet": true,
@@ -924,7 +935,8 @@
     "gasValuation": "2026-09-28T06:59:25.000Z",
     "gasPayer": "0x0df5590d07c493ecf14473979bf3d353cb2211ec",
     "cexCost": 0,
-    "originalUsdt": 0
+    "originalUsdt": 0,
+    "category": "temporary-lp"
   },
   {
     "pool": 3,
@@ -965,14 +977,14 @@
     "originalUsdt": 0
   },
   {
-    "pool": -1,
+    "pool": 4,
     "hash": "0x4173f161a7bf03f1fc6d63b993bc770542b7fd41ece31baf3c6660d67427c654",
     "time": "09-27 00:54",
-    "action": "新交易待分類",
+    "action": "開啟池四 #3325756",
     "usd": -3408.357951,
     "token": -3950.3382957433605,
     "symbol": "PONS",
-    "recognized": false,
+    "recognized": true,
     "timestamp": 1790441669,
     "gasEth": 0.000007860285734,
     "gasPaidByWallet": true,
@@ -981,6 +993,7 @@
     "gasValuation": "2026-09-28T06:59:25.000Z",
     "gasPayer": "0x0df5590d07c493ecf14473979bf3d353cb2211ec",
     "cexCost": 0,
-    "originalUsdt": 0
+    "originalUsdt": 0,
+    "category": "lp"
   }
 ]

@@ -1,6 +1,6 @@
 {
-  "asOf": "2026-09-28T06:59:25.000Z",
-  "block": 74601020,
+  "asOf": "2026-09-28T07:39:15.000Z",
+  "block": 74624734,
   "reconciled": true,
   "monitor": {
     "cutoff": 1788853787,
@@ -56,10 +56,10 @@
   "pool3": {
     "pons": 0,
     "usdg": 0,
-    "price": 0.5226068930647768,
+    "price": 0.517103345629172,
     "liquidity": "0",
-    "sqrt": "57275270714174298152961",
-    "tick": -282814,
+    "sqrt": "56972890994078351457601",
+    "tick": -282920,
     "protocolFee": 2048500,
     "lpFee": 3000,
     "unclaimedPons": 0,
@@ -72,27 +72,28 @@
     "walletPons": 11141.767855792752,
     "walletUsdg": 1845.4192219999998,
     "capital": 9801.946811812868,
-    "value": 7668.18390436485,
+    "value": 7606.864656453998,
     "gas": 2.2941062339467893,
-    "pnl": -2136.057013681965,
-    "roi": -21.78707185530389
+    "pnl": -2197.376261592817,
+    "roi": -22.412507811268423,
+    "active": false
   },
   "totals": {
-    "value": 4667.5495610984635,
+    "value": 9852.758506722275,
     "external": 11334.61,
     "gas": 5.647111650148812,
     "frontCost": 9.367608,
-    "pnl": -6672.707550551686,
+    "pnl": -1487.498604927874,
     "breakdown": {
-      "lpValue": 0,
-      "unclaimedValue": 0,
+      "lpValue": 5201.28926436626,
+      "unclaimedValue": 33.07341565798647,
       "walletPons": 8931.282045910406,
       "walletUsdg": 2.2737367544323206e-12,
-      "walletPonsValue": 4667.549561098461,
+      "walletPonsValue": 4618.395826698027,
       "independentPons": 1739.8524856421238,
-      "independentValue": 909.2589019124596,
+      "independentValue": 899.6835412267733,
       "lpRelatedWalletPons": 7191.429560268282,
-      "lpRelatedWalletPonsValue": 3758.290659186001,
+      "lpRelatedWalletPonsValue": 3718.712285471254,
       "method": "ledger-balances-v1"
     }
   },
@@ -135,5 +136,28 @@
       "cexCost": 0,
       "originalUsdt": 0
     }
-  ]
+  ],
+  "pool4": {
+    "pons": 7974.756675349752,
+    "usdg": 1077.5159069643303,
+    "price": 0.514680442944365,
+    "liquidity": "25927425798322537",
+    "sqrt": "56839260213127858558935",
+    "tick": -282967,
+    "protocolFee": 0,
+    "lpFee": 0,
+    "unclaimedPons": 45.578259853085854,
+    "unclaimedUsdg": 9.504745,
+    "poolId": "0x486435a1f76cd58193f854c6e6213cd05fd58d637865d02065ff558b387fa6ea",
+    "lower": -284160,
+    "upper": -277980,
+    "nft": 3325756,
+    "active": true,
+    "entryPrice": 0.6517511004418225,
+    "capital": 5982.995282368209,
+    "gas": 0.02081561070737485,
+    "value": 5214.930188976692,
+    "pnl": -768.0859090022241,
+    "roi": -12.837771057672503
+  }
 }

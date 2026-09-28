@@ -1,6 +1,7 @@
 import {updateBreakdown} from './breakdown.mjs';
 import fs from 'node:fs';
 import {portfolio} from './portfolio.mjs';
+import {correctTransactions,pool4Config,pool4Accounting} from './transaction-corrections.mjs';
 import {refreshPool} from './pool-refresh.mjs';
 import {rpc,state,words,hex,WALLET,MANAGER,POOL,PONS,USDG,amounts} from './chain.mjs';
 const read=f=>JSON.parse(fs.readFileSync(f)),write=(f,x)=>{fs.writeFileSync(f+'.tmp',JSON.stringify(x,null,2));fs.renameSync(f+'.tmp',f)};
@@ -33,6 +34,8 @@ const pendingDecision=routedSwap&&hash==='0x5cb234a261e7717f96fa8f6ad480c936d832
 rows.push({pool:isFunding?0:pendingDecision?4:recognized?3:-1,hash,time:'',action:isFunding?'外部本金到賬':approval?'代幣授權':pendingDecision?'換幣／待決策持倉':knownSwap?'換幣':knownPosition?(BigInt.asIntN(256,mw[2])===0n?'收取費用':BigInt.asIntN(256,mw[2])>0n?'加倉 / 費用抵扣':'減少流動性'):'新交易待分類',usd,token,symbol:'PONS',recognized});}
 for(const r of rows){const receipt=receipts[r.hash];const ts=Number(BigInt(receipt.logs.find(l=>l.blockTimestamp&&l.blockTimestamp!=='0x0')?.blockTimestamp||'0x0'));r.timestamp=ts||0;if(ts)r.time=new Date((ts+28800)*1000).toISOString().slice(5,16).replace('T',' ');r.gasEth=Number(BigInt(receipt.gasUsed)*BigInt(receipt.effectiveGasPrice))/1e18;r.gasPaidByWallet=receipt.from===WALLET;r.gasPriceUsd=r.pool===1?2458.460992:r.pool===2?2495.24248:ethPrice;r.gasUsd=r.gasPaidByWallet?r.gasEth*r.gasPriceUsd:0;r.gasValuation=r.pool===1?'池一退出時點':r.pool===2?'池二退出時點':asOf;r.gasPayer=receipt.from;r.cexCost=funding.indexOf(r.hash)===0?8.23:funding.indexOf(r.hash)===1?1.137608:0;r.originalUsdt=funding.indexOf(r.hash)===0?10003:funding.indexOf(r.hash)===1?1331.61:0;}
 rows.sort((a,b)=>a.time.localeCompare(b.time));
+correctTransactions(rows);
+pending.splice(0,pending.length,...rows.filter(r=>r.recognized===false).map(r=>r.hash));
 let walletP=19.104282695661706,walletU=19.891201;for(const r of rows.filter(r=>r.pool===3&&!base.some(b=>b.hash===r.hash))){walletP+=r.token;walletU+=r.usd}
 const strategyTransfer=Math.max(0,-walletU);walletU+=strategyTransfer;
 const gas3=rows.filter(r=>r.pool===3).reduce((a,r)=>a+r.gasUsd,0),gasAll=rows.reduce((a,r)=>a+r.gasUsd,0),capital=9801.946811812868+strategyTransfer;
@@ -44,11 +47,15 @@ const apr={value:null,volume24h:null,tvl:null,status:'官方APR待接入',source
 // Only verified official displayed APR observations are eligible. Never derive APR.
 const samples=(fs.existsSync('data/apr-samples.json')?read('data/apr-samples.json'):[]).filter(x=>x.method==='official-display');
 monitor.lastChecked=asOf;monitor.nonce=nonce;monitor.missingOutgoing=missing;monitor.pending=pending;write('data/monitor-state.json',monitor);
-const totals=portfolio(rows,s);
+const pool4=await state(hex(head),pool4Config);
+const totals=portfolio(rows,s,[pool4]);
+if(s.liquidity!=='0'||pool4.liquidity==='0')throw Error('Pool migration liquidity mismatch');
 reconciled=reconciled&&totals.breakdown.walletPons>=-1e-6&&totals.breakdown.walletUsdg>=-1e-6;
 const snapshot={asOf,block:head,reconciled,monitor,apr,aprSamples:samples.slice(-720),pool3:{...s,collected,strategyTransfer,walletPons:walletP,walletUsdg:walletU,capital,value,gas:gas3,pnl:value-capital-gas3,roi:(value-capital-gas3)/(capital+gas3)*100},totals,newOperations:two.map(h=>rows.find(r=>r.hash===h))};
 const latestAddRow=rows.filter(r=>r.pool===3&&r.action==='加倉 / 費用抵扣').at(-1);if(latestAddRow){try{await updateBreakdown(latestAddRow,receipts[latestAddRow.hash])}catch{ /* Keep verified net cashflows when historical valuation is unavailable. */ }}
 write('app/snapshot.json',snapshot);console.log(JSON.stringify(snapshot,null,2));
+snapshot.pool3.active=false;snapshot.pool4=pool4Accounting(pool4,rows);snapshot.totals=totals;
+write('app/snapshot.json',snapshot);
 write('data/receipts.json',receipts);write('app/ledger.json',rows);
 
 }
