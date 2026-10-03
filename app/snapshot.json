@@ -1,11 +1,11 @@
 {
-  "asOf": "2026-10-03T06:36:00.000Z",
-  "block": 78876782,
+  "asOf": "2026-10-03T14:20:09.000Z",
+  "block": 79149619,
   "reconciled": false,
   "monitor": {
     "cutoff": 1788853787,
     "nonce": 67,
-    "lastBlock": 78876782,
+    "lastBlock": 79149619,
     "discovered": [
       "0x0624445b49f6fd9b27dc206ce0886de1d72542e0f7f113f77d02265b8ceccab0",
       "0x078ae0e388c756a9e8085f7f76887e0a9b4c96e8376c9838f111dbf5c1d281cb",
@@ -37,15 +37,15 @@
     ],
     "nativeBalance": 0.001503913135743767,
     "startBlock": 57524674,
-    "blockHash": "0xdcc7c0ba56b9179a70b8317d66dde4260aa6ad70309718bdace69ef28417dbf0",
-    "lastChecked": "2026-10-03T06:36:00.000Z",
+    "blockHash": "0x2872e99acd5e17d42db514266bd95167482aedf3fdc4e33a05a53622ecd70da1",
+    "lastChecked": "2026-10-03T14:20:09.000Z",
     "missingOutgoing": 0,
     "pending": [
       "0xf610547bcd1ae4e4b6573ac97ab2dc85bcf29f10b5ea516b1ec4fbf38b75308c"
     ],
     "coverage": "ERC20/NFT事件與發出交易nonce核對；無日誌操作或原生ETH轉入需另核驗",
     "nativeResidual": 0,
-    "checkpointBlock": 78876782
+    "checkpointBlock": 79149619
   },
   "apr": {
     "value": null,
@@ -53,16 +53,16 @@
     "tvl": null,
     "status": "官方APR待接入",
     "source": "https://developers.uniswap.org/docs/api-reference/pool_info",
-    "sampledAt": "2026-10-03T06:36:00.000Z"
+    "sampledAt": "2026-10-03T14:20:09.000Z"
   },
   "aprSamples": [],
   "pool3": {
     "pons": 0,
     "usdg": 0,
-    "price": 0.4272503096473543,
+    "price": 0.4202924598794571,
     "liquidity": "0",
-    "sqrt": "51787002810858869170527",
-    "tick": -284829,
+    "sqrt": "51363591475667637409628",
+    "tick": -284993,
     "protocolFee": 2048500,
     "lpFee": 3000,
     "unclaimedPons": 0,
@@ -75,28 +75,28 @@
     "walletPons": 11141.767855792752,
     "walletUsdg": 1845.4192219999998,
     "capital": 9801.946811812868,
-    "value": 6605.742988406391,
-    "gas": 2.3200486216639167,
-    "pnl": -3198.5238720281404,
-    "roi": -32.623794492333715,
+    "value": 6528.2202415169995,
+    "gas": 2.321349692491191,
+    "pnl": -3276.04791998836,
+    "roi": -33.414507498388865,
     "active": false
   },
   "totals": {
-    "value": 8308.99111887968,
+    "value": 8174.684778467099,
     "external": 11334.61,
-    "gas": 5.6874331419414395,
+    "gas": 5.68876632443561,
     "frontCost": 9.367608,
-    "pnl": -3031.3063142622623,
+    "pnl": -3165.613987857337,
     "breakdown": {
-      "lpValue": 4356.694895245903,
-      "unclaimedValue": 16.339352007075338,
+      "lpValue": 4285.745318659978,
+      "unclaimedValue": 16.121855154959942,
       "walletPons": 9074.537260901683,
       "walletUsdg": 58.85801700000227,
-      "walletPonsValue": 3877.098854626698,
+      "walletPonsValue": 3813.9595876521594,
       "independentPons": 1739.8524856421238,
-      "independentValue": 743.3525132313164,
+      "independentValue": 731.246881017916,
       "lpRelatedWalletPons": 7334.6847752595595,
-      "lpRelatedWalletPonsValue": 3133.746341395382,
+      "lpRelatedWalletPonsValue": 3082.712706634243,
       "method": "ledger-balances-v1"
     }
   },
@@ -113,9 +113,9 @@
       "timestamp": 1788839475,
       "gasEth": 0.000038484113484,
       "gasPaidByWallet": true,
-      "gasPriceUsd": 2678.1468386893825,
-      "gasUsd": 0.10306610686693804,
-      "gasValuation": "2026-10-03T06:36:00.000Z",
+      "gasPriceUsd": 2679.648729076696,
+      "gasUsd": 0.10312390578704395,
+      "gasValuation": "2026-10-03T14:20:09.000Z",
       "gasPayer": "0x0df5590d07c493ecf14473979bf3d353cb2211ec",
       "cexCost": 0,
       "originalUsdt": 0
@@ -132,9 +132,9 @@
       "timestamp": 1788845839,
       "gasEth": 0.000052100435512,
       "gasPaidByWallet": true,
-      "gasPriceUsd": 2678.1468386893825,
-      "gasUsd": 0.13953261666080283,
-      "gasValuation": "2026-10-03T06:36:00.000Z",
+      "gasPriceUsd": 2679.648729076696,
+      "gasUsd": 0.13961086580407314,
+      "gasValuation": "2026-10-03T14:20:09.000Z",
       "gasPayer": "0x0df5590d07c493ecf14473979bf3d353cb2211ec",
       "cexCost": 0,
       "originalUsdt": 0
@@ -143,10 +143,10 @@
   "pool4": {
     "pons": 10197.054974265206,
     "usdg": 0,
-    "price": 0.4281367916501874,
+    "price": 0.4219357742887768,
     "liquidity": "25927425798322537",
-    "sqrt": "51840700206018411364352",
-    "tick": -284808,
+    "sqrt": "51463907556750912818028",
+    "tick": -284954,
     "protocolFee": 0,
     "lpFee": 0,
     "unclaimedPons": 31.259204980094136,
@@ -158,9 +158,9 @@
     "active": true,
     "entryPrice": 0.6517511004418225,
     "capital": 5982.995282368209,
-    "gas": 0.02105099938970735,
-    "value": 4382.101463692203,
-    "pnl": -1600.9148696753957,
-    "roi": -26.757655010015753
+    "gas": 0.021062804677292782,
+    "value": 4318.675509888741,
+    "pnl": -1664.3408352841454,
+    "roi": -27.817755113220443
   }
 }
